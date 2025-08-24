@@ -102,8 +102,16 @@ The app features a modern, intuitive interface with:
    ```
 
 4. **Environment Configuration**
-   
-   Create a `.env` file in the root directory:
+    
+    **⚠️ SECURITY WARNING: Never commit your .env files to version control!**
+    
+    Copy the example file and update with your credentials:
+    ```bash
+    cp .env.example .env
+    cp .env.example server/.env
+    ```
+    
+    Then edit the `.env` files with your actual credentials:
    ```env
    # MongoDB Configuration
    MONGODB_URI=mongodb://localhost:27017/my_physio_db
