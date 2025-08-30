@@ -2,7 +2,7 @@ import { Patient, Session, SessionFilter } from '../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // API Base URL - should match your server configuration
-export const API_BASE_URL = process.env.EXPO_PUBLIC_API_BASE_URL || 'http://192.168.0.122:3000/api';
+export const API_BASE_URL = process.env.EXPO_PUBLIC_API_BASE_URL;
 
 // Helper function to get auth headers
 const getAuthHeaders = async () => {

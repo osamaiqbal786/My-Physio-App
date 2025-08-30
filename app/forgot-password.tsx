@@ -108,7 +108,7 @@ export default function ForgotPasswordScreen() {
     if (!validateEmail()) return;
     
     try {
-      const response = await fetch(`${process.env.EXPO_PUBLIC_API_BASE_URL || 'http://192.168.0.122:3000/api'}/auth/forgot-password`, {
+      const response = await fetch(`${process.env.EXPO_PUBLIC_API_BASE_URL}/auth/forgot-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -144,7 +144,7 @@ export default function ForgotPasswordScreen() {
 
     try {
       
-      const response = await fetch(`${process.env.EXPO_PUBLIC_API_BASE_URL || 'http://192.168.0.122:3000/api'}/auth/reset-password`, {
+      const response = await fetch(`${process.env.EXPO_PUBLIC_API_BASE_URL}/auth/reset-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

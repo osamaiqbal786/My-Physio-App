@@ -105,7 +105,7 @@ export default function SignupScreen() {
 
     // Send OTP first, then show verification screen
     try {
-      const response = await fetch(`${process.env.EXPO_PUBLIC_API_BASE_URL || 'http://192.168.0.122:3000/api'}/otp/send`, {
+      const response = await fetch(`${process.env.EXPO_PUBLIC_API_BASE_URL}/otp/send`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

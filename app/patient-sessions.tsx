@@ -9,11 +9,12 @@ import {
   useColorScheme,
   ActivityIndicator,
   SafeAreaView,
-  useSafeAreaInsets,
   StatusBar,
   Platform
 } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
+import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Session } from '../types';
 import { getPatientSessions, getPatientById } from '../utils/mongoStorage';
 import { exportSessionsToExcel } from '../utils/exportUtils';
@@ -137,6 +138,13 @@ export default function PatientSessionsScreen() {
   return (
     <View style={[styles.container, { backgroundColor: theme.backgroundColor }]}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      
+      {/* Hide default header */}
+      <Stack.Screen 
+        options={{ 
+          headerShown: false 
+        }} 
+      />
       
       {/* Custom Header - hide profile dropdown */}
       <CustomHeader 
