@@ -4,7 +4,7 @@
     "slug": "my-physio",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/rehabiri-light.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "assetBundlePatterns": [
@@ -16,6 +16,7 @@
     },
     "android": {
       "adaptiveIcon": {
+        "foregroundImage": "./assets/images/rehabiri-light.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.yourcompany.myphysio",
@@ -24,14 +25,15 @@
         "android.permission.CAMERA",
         "android.permission.READ_EXTERNAL_STORAGE",
         "android.permission.WRITE_EXTERNAL_STORAGE",
-        "android.permission.ACCESS_NETWORK_STATE"
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.RECORD_AUDIO"
       ],
       "versionCode": 1
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/rehabiri-light.png"
     },
     "plugins": [
       "expo-router",

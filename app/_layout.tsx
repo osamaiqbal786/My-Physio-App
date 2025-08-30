@@ -7,6 +7,12 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <AuthProvider>
         <Stack>
+          <Stack.Screen 
+            name="splash" 
+            options={{
+              headerShown: false
+            }}
+          />
           <Stack.Screen name="index" />
           <Stack.Screen name="login" />
           <Stack.Screen name="signup" />
