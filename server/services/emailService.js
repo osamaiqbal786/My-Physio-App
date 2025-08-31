@@ -13,7 +13,7 @@ const createTransporter = () => {
       secure: false, // true for 465, false for other ports
       auth: {
         user: process.env.EMAIL_USER, // your email
-        pass: process.env.EMAIL_PASSWORD // your email password or app password
+        pass: process.env.EMAIL_PASS // your email password or app password
       },
       tls: {
         rejectUnauthorized: false
@@ -30,11 +30,11 @@ const sendOTPEmail = async (email, otp, isPasswordReset = false) => {
     
     const transporter = createTransporter();
     
-    const subject = isPasswordReset ? 'Password Reset - MyPhysio App' : 'Email Verification - MyPhysio App';
+    const subject = isPasswordReset ? 'Password Reset - Rehabiri App' : 'Email Verification - Rehabiri App';
     const title = isPasswordReset ? 'Password Reset' : 'Email Verification';
     const message = isPasswordReset 
-      ? 'You requested a password reset for your MyPhysio account.'
-      : 'Thank you for signing up for MyPhysio!';
+      ? 'You requested a password reset for your Rehabiri account.'
+      : 'Thank you for signing up for Rehabiri!';
     
     const mailOptions = {
       from: process.env.EMAIL_USER,
@@ -51,7 +51,7 @@ const sendOTPEmail = async (email, otp, isPasswordReset = false) => {
           <p>This code will expire in 10 minutes.</p>
           <p>If you didn't request this ${isPasswordReset ? 'password reset' : 'verification'}, please ignore this email.</p>
           <hr style="margin: 30px 0;">
-          <p style="color: #666; font-size: 12px;">MyPhysio - Your Physiotherapy Management App</p>
+          <p style="color: #666; font-size: 12px;">Rehabiri - Your Physiotherapy Management App</p>
         </div>
       `
     };

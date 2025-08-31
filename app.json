@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "My Physio",
+    "name": "Rehabiri",
     "slug": "my-physio",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -12,14 +12,14 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yourcompany.myphysio"
+      "bundleIdentifier": "com.yourcompany.rehabiri"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/rehabiri-light.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.yourcompany.myphysio",
+      "package": "com.yourcompany.rehabiri",
       "permissions": [
         "android.permission.INTERNET",
         "android.permission.CAMERA",

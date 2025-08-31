@@ -1,7 +1,7 @@
 {
-  "name": "my-physio-server",
+  "name": "rehabiri-server",
   "version": "1.0.0",
-  "description": "MongoDB API server for My Physio app",
+      "description": "MongoDB API server for Rehabiri app",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

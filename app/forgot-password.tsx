@@ -202,7 +202,7 @@ export default function ForgotPasswordScreen() {
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
         >
-          <Text style={[styles.title, { color: theme.textColor }]}>My Physio</Text>
+          <Text style={[styles.title, { color: theme.textColor }]}>Rehabiri</Text>
           <Text style={[styles.subtitle, { color: theme.subtitleColor }]}>Reset Your Password</Text>
 
           <View style={[styles.form, { backgroundColor: theme.cardBackground, shadowColor: isDarkMode ? '#000000' : '#000000' }]}>

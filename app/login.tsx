@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
   View, 
@@ -26,6 +26,15 @@ export default function LoginScreen() {
   const colorScheme = useColorScheme();
   const isDarkMode = colorScheme === 'dark';
   const insets = useSafeAreaInsets();
+  const [isReady, setIsReady] = useState(false);
+
+  // Wait for color scheme to be detected before showing content
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Define theme colors based on color scheme
   const theme = {
@@ -79,17 +88,25 @@ export default function LoginScreen() {
     router.push('/signup' as any);
   };
 
+  // Don't render until color scheme is detected
+  if (!isReady) {
+    return (
+      <SafeAreaView style={[styles.container, { backgroundColor: isDarkMode ? '#1E1E1E' : '#F5F5F5' }]}>
+        <Stack.Screen 
+          options={{ 
+            headerShown: false
+          }} 
+        />
+      </SafeAreaView>
+    );
+  }
+
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.backgroundColor }]}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Stack.Screen 
         options={{ 
-          title: 'Login', 
-          headerShown: true,
-          headerStyle: {
-            backgroundColor: theme.backgroundColor,
-          },
-          headerTintColor: theme.textColor,
+          headerShown: false
         }} 
       />
       
@@ -103,7 +120,7 @@ export default function LoginScreen() {
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
         >
-          <Text style={[styles.title, { color: theme.textColor }]}>My Physio</Text>
+          <Text style={[styles.title, { color: theme.textColor }]}>Rehabiri</Text>
           <Text style={[styles.subtitle, { color: theme.subtitleColor }]}>Welcome Back</Text>
 
           <View style={[styles.form, { backgroundColor: theme.cardBackground, shadowColor: isDarkMode ? '#000000' : '#000000' }]}>

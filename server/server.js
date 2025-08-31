@@ -21,7 +21,7 @@ app.use('/api/otp', require('./routes/otp'));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'My Physio API is running' });
+  res.json({ status: 'OK', message: 'Rehabiri API is running' });
 });
 
 // Error handling middleware
@@ -43,5 +43,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV}`);
-  console.log(`Server accessible at: http://192.168.0.125:${PORT}`);
+  console.log(`Server accessible at: http://10.254.200.118:${PORT}`);
 });

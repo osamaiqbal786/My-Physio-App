@@ -13,8 +13,18 @@ export default function RootLayout() {
               headerShown: false
             }}
           />
-          <Stack.Screen name="index" />
-          <Stack.Screen name="login" />
+          <Stack.Screen 
+            name="index" 
+            options={{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen 
+            name="login" 
+            options={{
+              headerShown: false
+            }}
+          />
           <Stack.Screen name="signup" />
           <Stack.Screen name="forgot-password" />
           <Stack.Screen 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, Image, StyleSheet, Animated, Dimensions, Text, useColorScheme } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../utils/AuthContext';
@@ -13,6 +13,15 @@ export default function CustomSplashScreen() {
   const router = useRouter();
   const colorScheme = useColorScheme();
   const isDarkMode = colorScheme === 'dark';
+  const [isReady, setIsReady] = useState(false);
+
+  // Wait for color scheme to be detected before showing content
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsReady(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     // Start animations with staggered timing
@@ -44,6 +53,7 @@ export default function CustomSplashScreen() {
         if (user) {
           router.replace('/(tabs)' as any);
         } else {
+          // Navigate directly to login without showing intermediate screen
           router.replace('/login' as any);
         }
       }
@@ -52,10 +62,20 @@ export default function CustomSplashScreen() {
     return () => clearTimeout(timer);
   }, [user, isLoading]);
 
+  // Don't render until color scheme is detected
+  if (!isReady) {
+    return (
+      <View style={[
+        styles.container, 
+        { backgroundColor: isDarkMode ? '#00143f' : '#FFFFFF' }
+      ]} />
+    );
+  }
+
   return (
     <View style={[
       styles.container, 
-      { backgroundColor: isDarkMode ? '#000000' : '#FFFFFF' }
+      { backgroundColor: isDarkMode ? '#00143f' : '#FFFFFF' }
     ]}>
       <Animated.View
         style={[

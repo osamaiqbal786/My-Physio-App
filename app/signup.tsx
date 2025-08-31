@@ -265,7 +265,7 @@ export default function SignupScreen() {
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
         >
-          <Text style={[styles.title, { color: theme.textColor }]}>My Physio</Text>
+          <Text style={[styles.title, { color: theme.textColor }]}>Rehabiri</Text>
           <Text style={[styles.subtitle, { color: theme.subtitleColor }]}>Create a new account</Text>
 
           <View style={[styles.form, { backgroundColor: theme.cardBackground, shadowColor: isDarkMode ? '#000000' : '#000000' }]}>
