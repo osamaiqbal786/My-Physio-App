@@ -2,7 +2,7 @@ import { User } from '../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // API Base URL - should match your server configuration
-const API_BASE_URL = 'http://localhost:3000/api';
+const API_BASE_URL = process.env.EXPO_PUBLIC_API_BASE_URL;
 
 // Helper function to make API calls
 const apiCall = async (endpoint: string, options: RequestInit = {}) => {
